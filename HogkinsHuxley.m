@@ -26,7 +26,7 @@ tt = 0:ts:100;
 
 %Define Input Current
 II = zeros(1,length(tt));
-II(1:5/ts) = 5; %Vector defines input I for each time step. Change '5/ts' to 'pulse-duration/ts'for differnt pulses
+II(1:.5/ts) = 50; %Vector defines input I for each time step. Change '.5/ts' to 'pulse-duration/ts'for differnt pulses
 %% Simulation Iteration
 
 % Initialize Variables with Steady State Values
@@ -101,12 +101,16 @@ figure(1)
 plot(tt,Vol)
 xlabel('Time [ms]')
 ylabel('Membrane Potential [mV]')
+title('Membrane Potential over Simulation Time')
+ylim([-90,40])
+
 
 figure(2)
 plot(tt, g_na_vec, tt, g_k_vec)
-legend('g_Na','g_K')
+legend('g_{Na}','g_K')
 xlabel('Time [ms]')
 ylabel('Conductance [mS/cm^2]')
+title('Channel Conductance over Simulation Time')
     
 
 
