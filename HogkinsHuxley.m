@@ -26,7 +26,7 @@ tt = 0:ts:100;
 
 %Define Input Current
 II = zeros(1,length(tt));
-II(1:5/ts) = 5; %Vector defines input I for each time step
+II(1:5/ts) = 5; %Vector defines input I for each time step. Change '5/ts' to 'pulse-duration/ts'for differnt pulses
 %% Simulation Iteration
 
 % Initialize Variables with Steady State Values
